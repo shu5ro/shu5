@@ -24,11 +24,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: screenNoticePage(),
-      //home: WelcomePage(),
-      //home: HomeController(),
-      //home: SwipeNavigation(),
-      //home: worksPage(),
-      //home: aboutPage(),
       debugShowCheckedModeBanner: false,
     );
   }

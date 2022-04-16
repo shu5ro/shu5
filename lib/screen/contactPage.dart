@@ -5,6 +5,7 @@ import 'package:shgapp/components/links.dart';
 
 
 import '../components/contactCards.dart';
+import '../components/form.dart';
 
 class contactPage extends StatelessWidget {
 
@@ -13,44 +14,71 @@ class contactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var contactList = [
-      contactCards('assets/images/about_img_2.png', 'YouTube', 'YouTubeです', 'https://www.youtube.com/'),
-      contactCards('assets/images/about_img_2.png', 'Instagram', 'Instagramです', 'https://www.instagram.com/'),
-      contactCards('assets/images/about_img_2.png', 'Twitter', 'Twitterです', 'https://twitter.com/shu5_du'),
-      //worksCards('mov_i', 'assets/images/works.png', 'タイトル', '概要', 'https://www.youtube.com/watch?v=c9RzZpV460k&list=RDTnzGqfxLSEY&index=8'),
-    ];
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0.0,
-        backgroundColor: backColor,
-        leading: IconButton(
-          onPressed: () { Navigator.pop(context); },
-          icon: Icon(Icons.arrow_back_ios_new_outlined), color: Colors.black,),
-        title: Text('contact',style: TextStyle(color: Colors.black),),
-      ),
-      body: Container(
-        color: backColor,
-        child: Column(
-          children: <Widget>[
-            //ヘッド_目次
-            Expanded(
-              flex: 1,
-              child: index(),
-            ),
-            //SNS_リスト
-            Expanded(
-              flex: 9,
-              child: Container(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  children: contactList,),
-              ),
-            ),
+    //フォーム_リンク
+    final String source = 'https://docs.google.com/forms/d/e/1FAIpQLSe-u0_l9TJeh7nLtnxdfRkxnJ9vKAjnpwf8s08exzi-xe_QFA/viewform?usp=sf_link';
 
-          ],
+    return Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              color: Colors.white,
+            ),
+          child: AspectRatio(
+            aspectRatio: 9/19.5,
+              child: Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.symmetric(vertical: 0.0,horizontal: 0.0),
+              decoration: BoxDecoration(
+                color:backColor,
+                borderRadius: BorderRadius.circular(15),
+          ),
+                child: AspectRatio(
+        aspectRatio: 9/19.5,
+        child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            elevation: 0.0,
+            backgroundColor: backColor,
+            leading: IconButton(
+              onPressed: () { Navigator.pop(context); },
+              icon: Icon(Icons.arrow_back_ios_new_outlined), color: Colors.black,),
+            title: Text('contact',style: TextStyle(color: Colors.black),),
+          ),
+          body: Container(
+            color: backColor,
+            child: Column(
+              children: <Widget>[
+                //ヘッド_目次
+                Expanded(
+                  flex: 1,
+                  child: index(),
+                ),
+
+                Expanded(
+                    flex: 9,
+                    child: Stack(
+                      children: [
+                        //コンタクト_フォーム
+                        Container(
+                          alignment: Alignment.center,
+                          color: backColor,
+                          padding: EdgeInsets.all(0.0),
+                          child: formCard('google-form',source),
+                        ),
+                      ],
+                    )
+                ),
+              ],
+            ),
+          ),
         ),
       ),
+    ),
+    )
     );
   }
 }

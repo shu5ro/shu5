@@ -16,17 +16,22 @@ class favoriteCards extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 16/9,
+      aspectRatio: 19.5/9,
       child: Container(
         alignment: Alignment.center,
         width: 150,
         height: 50,
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-        padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
-          color: Colors.white70,
-          borderRadius: BorderRadius.circular(15.0),
+          color: Colors.deepPurpleAccent,
+          borderRadius: BorderRadius.circular(10.0),
         ),
+        child: Container(
+            padding: EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+              color: Colors.white24,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
         child: Row(
           children: <Widget>[
             //icon_
@@ -34,8 +39,18 @@ class favoriteCards extends StatelessWidget{
               flex: 1,
               child: Container(
                 alignment: Alignment.center,
-                //color: Colors.red,
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(2.5),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    //円にするやつ
+                    shape: BoxShape.circle,
+                    //border: Border.all(color: Colors.white, width: 2,),
+                  ),
+                  padding: EdgeInsets.all(5.0),
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Icon(
@@ -56,9 +71,11 @@ class favoriteCards extends StatelessWidget{
                     :
                     //その他_アイコン
                     Icons.push_pin_outlined,
+                    color: Colors.white,
                     size: 40,
                   ),
                 ),
+              ),
               ),
             ),
             //コンテンツ_テキスト
@@ -78,14 +95,18 @@ class favoriteCards extends StatelessWidget{
                       child: Container(
                         //color: Colors.blue,
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                            titleText,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'NotoSansJP',
-                            fontWeight: FontWeight.w600,
+                        child: FittedBox(
+                          fit: BoxFit.fitHeight,
+                          child: SelectableText(
+                              titleText,
+                            maxLines: 1,
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'NotoSansJP',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       ),
@@ -94,14 +115,13 @@ class favoriteCards extends StatelessWidget{
                     Expanded(
                       flex: 2,
                       child: Container(
-                        //color: Colors.green,
                         alignment: Alignment.centerLeft,
                         child: Text(
                             subText,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            color: Colors.black54,
+                            color: Colors.white70,
                             fontFamily: 'NotoSansJP',
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
@@ -115,6 +135,7 @@ class favoriteCards extends StatelessWidget{
             )
           ],
         ),
+      ),
       ),
     );
   }

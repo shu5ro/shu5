@@ -63,7 +63,6 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
             ),
           //スワイプ_ナビ
           Container(
-           //color: Colors.red,
             alignment: Alignment.center,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -73,7 +72,6 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
               children: <Widget>[
                 //スワイプ_アニメーション
                 Container(
-                  //color: Colors.blue,
                   alignment: Alignment.center,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   margin: EdgeInsets.only(bottom: 10.0,left: 55.0),
@@ -92,7 +90,6 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
                 ),
                 //スワイプ_テキスト
                 Container(
-                  //color: Colors.blue,
                   width: MediaQuery.of(context).size.width*0.5,
                   height: 50,
                   padding: EdgeInsets.all(15.0),

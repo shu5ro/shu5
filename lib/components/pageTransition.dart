@@ -54,7 +54,6 @@ class pageTransition extends StatelessWidget{
                  //円にするやつ
                  shape: BoxShape.circle,
                  border: Border.all(color: Colors.black, width: 2,),
-                 //borderRadius: BorderRadius.circular(15),
                ),
                child: FittedBox(
                  fit: BoxFit.fitHeight,
@@ -73,7 +72,6 @@ class pageTransition extends StatelessWidget{
              flex: 2,
              child: Container(
                alignment: Alignment.center,
-               //color: Colors.red,
                margin:EdgeInsets.only(left: 0.0, top: 1.5, right: 0.0, bottom: 0.0),
                child:FittedBox(
                  fit: BoxFit.fitHeight,

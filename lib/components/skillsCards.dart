@@ -27,12 +27,17 @@ class skillsCards extends StatelessWidget{
         alignment: Alignment.center,
         width: 150,
         height: 50,
-        margin: EdgeInsets.only(left: 5.0, top: 20.0, right: 5.0, bottom: 0.0),
-        padding: EdgeInsets.all(5.0),
+        margin: EdgeInsets.only(left: 5.0, top: 10.0, right: 5.0, bottom: 10.0),
         decoration: BoxDecoration(
-          color: Colors.white70,
-          borderRadius: BorderRadius.circular(15.0),
+          color: Colors.deepPurpleAccent,
+          borderRadius: BorderRadius.circular(10.0),
         ),
+        child: Container(
+          padding: EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            color: Colors.white24,
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         child: Row(
           children: <Widget>[
             //icon_
@@ -40,8 +45,17 @@ class skillsCards extends StatelessWidget{
               flex: 1,
               child: Container(
                 alignment: Alignment.center,
-                //color: Colors.red,
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(2.5),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    //円にするやつ
+                    shape: BoxShape.circle,
+                  ),
+                padding: EdgeInsets.all(8.0),
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Icon(
@@ -70,49 +84,56 @@ class skillsCards extends StatelessWidget{
                         ?
                     Icons.brush_outlined
                     :
+                    //cam_アイコン
+                    skillIcon == 'C'
+                        ?
+                    Icons.photo_camera_outlined
+                    :
                     //その他_アイコン
                     Icons.push_pin_outlined,
+                    color: Colors.white,
                     size: 40,
                   ),
                 ),
               ),
             ),
+            ),
             //コンテンツ_テキスト
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
-                //color: Colors.green,
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.all(1.5),
+                padding: EdgeInsets.all(0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     //タイトル_テキスト
                     Expanded(
-                      flex: 3,
+                      flex: 6,
                       child: Container(
-                        //color: Colors.blue,
                         alignment: Alignment.centerLeft,
                         width: double.infinity,
                         height: 250,
-                        child: Text(
-                          skillText,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'NotoSansJP',
-                            fontWeight: FontWeight.w600,
+                        child: FittedBox(
+                          fit: BoxFit.fitHeight,
+                          child: SelectableText(
+                            skillText,
+                            maxLines: 1,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'NotoSansJP',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24
+                            ),
                           ),
                         ),
                       ),
                     ),
                     //サブ_テキスト
                     Expanded(
-                      flex: 2,
+                      flex: 4,
                       child: Container(
-                        //color: Colors.green,
                         alignment: Alignment.centerLeft,
                         child: Text(
                         skillSubText == '1'
@@ -137,7 +158,7 @@ class skillsCards extends StatelessWidget{
                               :
                           skillSubText,
                           style: TextStyle(
-                            color: Colors.black54,
+                            color: Colors.white,
                             fontFamily: 'NotoSansJP',
                             fontWeight: FontWeight.w500,
                           ),
@@ -149,6 +170,7 @@ class skillsCards extends StatelessWidget{
               ),
             )
           ],
+        ),
         ),
       ),
     );

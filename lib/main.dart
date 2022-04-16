@@ -4,7 +4,9 @@ import 'package:shgapp/components/worksCards.dart';
 import 'package:shgapp/screen/aboutPage.dart';
 import 'package:shgapp/screen/contactPage.dart';
 import 'package:shgapp/screen/pageController.dart';
+import 'package:shgapp/screen/screenNoticePage.dart';
 import 'package:shgapp/screen/worksPage.dart';
+import 'components/moviePlay.dart';
 import 'screen/intro.dart';
 
 void main() {
@@ -21,12 +23,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomePage(),
+      home: screenNoticePage(),
+      //home: WelcomePage(),
       //home: HomeController(),
       //home: SwipeNavigation(),
       //home: worksPage(),
       //home: aboutPage(),
-      //home: contactPage(),
       debugShowCheckedModeBanner: false,
     );
   }

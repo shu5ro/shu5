@@ -42,7 +42,6 @@ class links extends StatelessWidget{
                    //円にするやつ
                    shape: BoxShape.circle,
                    border: Border.all(color: Colors.black12, width: 2,),
-                   //borderRadius: BorderRadius.circular(15),
                  ),
                  child: FittedBox(
                    fit: BoxFit.fitHeight,
@@ -69,7 +68,6 @@ class links extends StatelessWidget{
                      //円にするやつ
                      shape: BoxShape.circle,
                      border: Border.all(color: Colors.black, width: 2,),
-                     //borderRadius: BorderRadius.circular(15),
                    ),
                    child: FittedBox(
                      fit: BoxFit.fitHeight,
@@ -88,7 +86,7 @@ class links extends StatelessWidget{
              Expanded(
                child: GestureDetector(
                  onTap:(){
-                   urlText = 'https://www.instagram.com/';
+                   urlText = 'https://www.instagram.com/shu5_003/';
                    _launchInBrowser(urlText);
                  },
                  child: Container(
@@ -101,13 +99,6 @@ class links extends StatelessWidget{
                      //円にするやつ
                      shape: BoxShape.circle,
                      border: Border.all(color: Colors.black, width: 2,),
-                     //borderRadius: BorderRadius.circular(15),
-
-                     // gradient: LinearGradient(
-                     //   colors: [Color(0xFF8C1BAB),Color(0xFFDDFFAA00)],
-                     //   begin: Alignment.topRight,
-                     //   end: Alignment.bottomLeft,
-                     // )
                    ),
                    child: FittedBox(
                      fit: BoxFit.fitHeight,
@@ -139,13 +130,6 @@ class links extends StatelessWidget{
                      //円にするやつ
                      shape: BoxShape.circle,
                      border: Border.all(color: Colors.black, width: 2,),
-                     //borderRadius: BorderRadius.circular(15),
-
-                     // gradient: LinearGradient(
-                     //   colors: [Color(0xFF8C1BAB),Color(0xFFDDFFAA00)],
-                     //   begin: Alignment.topRight,
-                     //   end: Alignment.bottomLeft,
-                     // )
                    ),
                    child: FittedBox(
                      fit: BoxFit.fitHeight,
@@ -178,13 +162,6 @@ class links extends StatelessWidget{
                      //円にするやつ
                      shape: BoxShape.circle,
                      border: Border.all(color: Colors.black, width: 2,),
-                     //borderRadius: BorderRadius.circular(15),
-
-                     // gradient: LinearGradient(
-                     //   colors: [Color(0xFF8C1BAB),Color(0xFFDDFFAA00)],
-                     //   begin: Alignment.topRight,
-                     //   end: Alignment.bottomLeft,
-                     // )
                    ),
                    child: FittedBox(
                      fit: BoxFit.fitHeight,

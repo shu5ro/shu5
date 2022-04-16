@@ -1,11 +1,11 @@
 {
-    "name": "shgapp",
-    "short_name": "shgapp",
+    "name": "shuご.β",
+    "short_name": "shuご.β",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "of course, I'm Super genius.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

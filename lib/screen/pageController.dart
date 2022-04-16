@@ -6,6 +6,8 @@ import 'package:shgapp/screen/aboutPage.dart';
 import 'package:shgapp/screen/contactPage.dart';
 import 'package:shgapp/screen/worksPage.dart';
 
+import '../components/moviePlay.dart';
+
 
 //ページコントローラー
 class HomeController extends StatefulWidget{
@@ -32,13 +34,11 @@ class _HomeControllerState extends State<HomeController> {
             //ページ管理(スマホ画面) 19.5：9
             Center(
               child: Container(
-                color: Colors.black,
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: AspectRatio(
                   aspectRatio: 9/19.5,
-                  //aspectRatio: 9/16,
                   child: Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width,
@@ -47,7 +47,6 @@ class _HomeControllerState extends State<HomeController> {
                       controller: controller,
                       scrollDirection: Axis.vertical,
                       children:<Widget> [
-                        // WelcomePage(),
                         AboutPage(),
                         WorksPage(),
                         ContactPage(),
@@ -70,82 +69,94 @@ class AboutPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: GestureDetector(
-          //about_画面遷移
-          onTap: (){
-            Navigator.of(context).push(
-              PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) {
-                    return aboutPage();
-                  },
-                  transitionDuration: Duration(milliseconds: 700),
-                  transitionsBuilder: (context,animation,secondAnimation, child) {
-                    final Offset begin = Offset(1.0, 0.0);
-                    final Offset end = Offset.zero;
-                    final Animatable<Offset> tween = Tween(
-                        begin: begin, end: end)
-                        .chain(CurveTween(curve: Curves.ease));
-                    final Animation<Offset> offsetAnimation = animation.drive(
-                        tween);
-                    return SlideTransition(
-                      position: offsetAnimation,
-                      child: child,
-                    );
-                  }
-              ),
-            );
-          },
-          child: Container(
-            color: Colors.black,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Stack(
-                children:<Widget>[
-                  //背景img
-                  Container(
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/about_animation_2.gif'),
-                          fit: BoxFit.fitHeight,
-                        )
-                    ),
+    return AspectRatio(
+      aspectRatio: 9/19.5,
+        child: Scaffold(
+          body: Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child: GestureDetector(
+              //about_画面遷移
+              onTap: (){
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return moviePlayPage('intro-mov', 'assets/html/view.html');
+                      },
+                      transitionDuration: Duration(milliseconds: 700),
+                      transitionsBuilder: (context,animation,secondAnimation, child) {
+                        final Offset begin = Offset(1.0, 0.0);
+                        final Offset end = Offset.zero;
+                        final Animatable<Offset> tween = Tween(
+                            begin: begin, end: end)
+                            .chain(CurveTween(curve: Curves.ease));
+                        final Animation<Offset> offsetAnimation = animation.drive(
+                            tween);
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      }
                   ),
-                  //背景img_フィルター
-                  Center(
-                    child: Container(
-                      width:  MediaQuery.of(context).size.width,
-                      height:  MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.white10,Colors.black87],
-                          begin: Alignment(0,0.5),
-                          end: Alignment.bottomCenter,
+                );
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Stack(
+                    children:<Widget>[
+                      //背景img
+                      Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          //角丸_
+                            borderRadius: BorderRadius.circular(15.0),
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/about_animation_3.gif'),
+                              fit: BoxFit.fitHeight,
+                            )
                         ),
                       ),
-                    ),
-                  ),
-                  //縦動画ui
-                  Container(
-                    alignment: Alignment.center,
-                    child: phoneUI(
-                      //タイトル
-                        "about",
-                        //短文説明
-                        "私について/나에 대해서",
-                        //アイコン_テキスト
-                        "a"
-                    ),
-                  ),
-                ]
+                      //背景img_フィルター
+                      Center(
+                        child: Container(
+                          width:  MediaQuery.of(context).size.width,
+                          height:  MediaQuery.of(context).size.height,
+                          decoration: BoxDecoration(
+                            //角丸_
+                            borderRadius: BorderRadius.circular(15.0),
+                            gradient: LinearGradient(
+                              colors: [Colors.white10,Colors.black87],
+                              begin: Alignment(0,0.5),
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                      //縦動画ui
+                      Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          //角丸_
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: phoneUI(
+                          //タイトル
+                            "about",
+                            //短文説明
+                            "私について/나에 대해서",
+                            //アイコン_テキスト
+                            "a"
+                        ),
+                      ),
+                    ]
+                ),
+              ),
             ),
           ),
-        ),
-      ),
+        )
     );
   }
 }
@@ -155,7 +166,9 @@ class WorksPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(10.0),
         child: GestureDetector(
           //works_画面遷移
           onTap: (){
@@ -182,7 +195,6 @@ class WorksPage extends StatelessWidget{
             );
           },
           child: Container(
-            color: Colors.black,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Stack(
@@ -193,8 +205,10 @@ class WorksPage extends StatelessWidget{
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     decoration: BoxDecoration(
+                      //角丸_
+                        borderRadius: BorderRadius.circular(15.0),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/works_animation_2.gif'),
+                          image: AssetImage('assets/images/works_animation_3.gif'),
                           fit: BoxFit.fitHeight,
                         )
                     ),
@@ -205,6 +219,8 @@ class WorksPage extends StatelessWidget{
                       width:  MediaQuery.of(context).size.width,
                       height:  MediaQuery.of(context).size.height,
                       decoration: BoxDecoration(
+                        //角丸_
+                          borderRadius: BorderRadius.circular(15.0),
                           gradient: LinearGradient(
                             colors: [Colors.white10,Colors.black38],
                             begin: Alignment(0,0.5),
@@ -216,6 +232,10 @@ class WorksPage extends StatelessWidget{
                   //縦動画ui
                   Container(
                     alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      //角丸_
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                     child: phoneUI(
                       //タイトル
                         "works",
@@ -240,7 +260,9 @@ class ContactPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(10.0),
         child: GestureDetector(
           //contact_画面遷移
           onTap: (){
@@ -267,7 +289,6 @@ class ContactPage extends StatelessWidget{
             );
           },
           child: Container(
-            color: Colors.black,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Stack(
@@ -278,8 +299,10 @@ class ContactPage extends StatelessWidget{
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     decoration: BoxDecoration(
+                      //角丸_
+                        borderRadius: BorderRadius.circular(15.0),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/contact_animatin_2.gif'),
+                          image: AssetImage('assets/images/contact_animation_4.gif'),
                           fit: BoxFit.fitHeight,
                         )
                     ),
@@ -290,6 +313,8 @@ class ContactPage extends StatelessWidget{
                       width:  MediaQuery.of(context).size.width,
                       height:  MediaQuery.of(context).size.height,
                       decoration: BoxDecoration(
+                        //角丸_
+                          borderRadius: BorderRadius.circular(15.0),
                           gradient: LinearGradient(
                             colors: [Colors.white10,Colors.black38],
                             begin: Alignment(0,0.5),
@@ -300,6 +325,10 @@ class ContactPage extends StatelessWidget{
                   ),
                   //縦動画ui
                   Container(
+                    decoration: BoxDecoration(
+                      //角丸_
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                     alignment: Alignment.center,
                     child: phoneUI(
                       //タイトル

@@ -38,7 +38,6 @@ class phoneUI extends StatelessWidget {
 class phoneTitleUi extends StatefulWidget{
   final String title;
   final String detaile;
-  //final String moreButton;
   phoneTitleUi(this.title,this.detaile,);
 
   @override
@@ -50,7 +49,6 @@ class _phoneTitleUiState extends State<phoneTitleUi> with SingleTickerProviderSt
     @override
   Widget build(BuildContext context){
       return Container(
-        //color: Colors.green,
         alignment: Alignment.bottomLeft,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -59,7 +57,6 @@ class _phoneTitleUiState extends State<phoneTitleUi> with SingleTickerProviderSt
         //タイトル(アイコン)
         child: Container(
           alignment: Alignment.bottomLeft,
-          //color: Colors.blue,
           width: MediaQuery.of(context).size.width*0.5,
           height: MediaQuery.of(context).size.height*0.5,
           padding: EdgeInsets.only(top: 0 ,bottom: 5.0, left: 5.0, right: 5.0),
@@ -68,7 +65,6 @@ class _phoneTitleUiState extends State<phoneTitleUi> with SingleTickerProviderSt
             children: <Widget>[
               //タイトル_
               Container(
-                //color: Colors.red,
                 alignment: Alignment.centerLeft,
                 child: Row(
                   children: [
@@ -94,7 +90,6 @@ class _phoneTitleUiState extends State<phoneTitleUi> with SingleTickerProviderSt
               ),
               //詳細_テキスト
               Container(
-                //color: Colors.green,
                 alignment: Alignment.bottomLeft,
                 child: FittedBox(
                   fit: BoxFit.fitHeight,
@@ -144,15 +139,13 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
 
   Widget build(BuildContext context){
     return Container(
-      //color: Colors.red,
       alignment: Alignment.bottomRight,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       padding: EdgeInsets.only(top: 0 ,bottom: 25.0, left: 5.0, right: 0.0),
       margin: EdgeInsets.only(top: 5.0 ,bottom: 25.0, left: 0.0, right: 5.0),
       child: Container(
-        alignment: Alignment.bottomCenter,
-        //color: Colors.blue,
+        alignment: Alignment.bottomRight,
         width: MediaQuery.of(context).size.width*0.15,
         height: MediaQuery.of(context).size.height*0.5,
         //アクション_ボタン
@@ -165,7 +158,6 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                 alignment: Alignment.center,
                 width: 100,
                 height: 100,
-                //color: Colors.green,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
                 padding: EdgeInsets.only(top: 5.0 ,bottom: 5.0, left: 2.0, right: 2.0),
                 child: FittedBox(
@@ -216,7 +208,6 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                         ),
                         //＋_ボタン
                         Container(
-                          //  color: Colors.black,
                           alignment: Alignment.bottomCenter,
                           width: 50,
                           height: 50,
@@ -236,9 +227,6 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                //color: Colors.green,
-                width: 100,
-                height: 100,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -272,9 +260,6 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                //color: Colors.green,
-                width: 100,
-                height: 100,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -283,7 +268,7 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                     Icon(
                       Icons.reply_outlined,
                       size: 40,
-                      color: Colors.white,
+                      color: Colors.white24,
                     ),
                     //テキスト_
                     Container(
@@ -296,7 +281,7 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                             fontSize: 16,
                             fontFamily: 'NotoSansJP',
                             fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                            color: Colors.white24,
                           ),),
                       ),
                     )
@@ -308,9 +293,6 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                // color: Colors.green,
-                width: 100,
-                height: 100,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -319,7 +301,7 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                     Icon(
                       Icons.more_horiz,
                       size: 40,
-                      color: Colors.white,
+                      color: Colors.white24,
                     ),
                     //テキスト_
                     Container(
@@ -332,7 +314,7 @@ class _phoneButtonsUiState extends State<phoneButtonsUi> with SingleTickerProvid
                             fontSize: 16,
                             fontFamily: 'NotoSansJP',
                             fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                            color: Colors.white24,
                           ),),
                       ),
                     )

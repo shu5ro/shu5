@@ -16,134 +16,185 @@ class worksDetaile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      body: Stack(
-          children: [
-            Hero(
-              tag: '$mainImg+$titleText',
-              child: Container(
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: Stack(
-                  children: <Widget>[
-                    //メイン_画面
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      child: Column(
-                        children: [
-                          //_イメージ
-                          Expanded(
-                            flex: 2,
-                            //url
-                            child: GestureDetector(
-                              onTap: (){
-                                _launchInBrowser(urlText);
-                              },
-                              child: Stack(
-                                children: [
-                                  //_イメージ
-                                  Container(
-                                    alignment: Alignment.center,
-                                    child: Image.asset(mainImg),
+    return Container(
+      alignment: Alignment.center,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
+      child: AspectRatio(
+        aspectRatio: 9/19.5,
+        child: Scaffold(
+          body: Stack(
+              children: [
+                Hero(
+                  tag: '$mainImg+$titleText',
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    child: Stack(
+                      children: <Widget>[
+                        //メイン_画面
+                        Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height,
+                          child: Column(
+                            children: [
+                              //イメージ_外部リンク
+                              Expanded(
+                                flex: 2,
+                                //url
+                                child: ElevatedButton(
+                                  onPressed: (){
+                                    _launchInBrowser(urlText);
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.black26,
+                                    shadowColor: Colors.black.withOpacity(0),
+                                    minimumSize: Size.zero,
+                                    padding: EdgeInsets.zero,
                                   ),
-                                  //外部ページ_アイコン
-                                  Container(
-                                    alignment: Alignment.center,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    color: Colors.black26,
-                                    child:Icon(
-                                      Icons.exit_to_app_outlined,
-                                      size: 56,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            //タイトル_説明_テキスト
-                            flex: 1,
-                            child: Container(
-                              color: backColor,
-                              alignment: Alignment.topLeft,
-                              margin: EdgeInsets.all(5),
-                              padding: EdgeInsets.all(5),
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height*0.5,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    //タイトル_テキスト
-                                    Container(
-                                      alignment: Alignment.topLeft,
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        child: Text(
-                                          titleText,
-                                          style: TextStyle(
-                                            fontSize: 40,
-                                            fontFamily: 'NotoSansJP',
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.black,
-                                          ),
+                                  child: Stack(
+                                    children: [
+                                      //_イメージ
+                                      Container(
+                                        alignment: Alignment.bottomCenter,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(mainImg),
+                                            fit: BoxFit.cover
+                                          )
                                         ),
                                       ),
-                                    ),
-                                    //説明_テキスト
-                                    Container(
-                                      alignment: Alignment.topLeft,
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        child: Text(
-                                          summaryText,
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontFamily: 'NotoSansJP',
-                                            fontWeight: FontWeight.w500,
-                                            color: textColor,
+                                      //外部ページ_アイコン
+                                      Column(
+                                        children: [
+                                          //アイコン_
+                                          Expanded(
+                                            child:Container(
+                                              alignment: Alignment.bottomCenter,
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                              color: Colors.black26,
+                                              child:Icon(
+                                                Icons.exit_to_app_outlined,
+                                                size: 56,
+                                                color: Colors.white70,
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+
+                                          //テキスト_
+                                          Expanded(
+                                            child: Container(
+                                              alignment: Alignment.topCenter,
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                                color: Colors.black26,
+                                              child:Text(
+                                                'Open external link',
+                                                style: TextStyle(
+                                                  color: Colors.white70,
+                                                ),
+                                              )
+                                          ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    //戻るボタン
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        alignment: Alignment.topLeft,
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height*0.1,
-                        padding: EdgeInsets.all(20.0),
-                        child: FittedBox(
-                          fit:BoxFit.fitHeight,
-                          child: Icon(
-                            Icons.arrow_back_ios_new_outlined,
-                            size: 50,
-                            color: Colors.white,
+                              Expanded(
+                                //タイトル_説明_テキスト
+                                flex: 1,
+                                child: Container(
+                                  alignment: Alignment.topLeft,
+                                  margin: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(5),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.height*0.5,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        //タイトル_テキスト
+                                        Container(
+                                          alignment: Alignment.topLeft,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: Text(
+                                              titleText,
+                                              style: TextStyle(
+                                                fontSize: 28,
+                                                fontFamily: 'NotoSansJP',
+                                                fontWeight: FontWeight.w700,
+                                                letterSpacing: 1.5,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        //説明_テキスト
+                                        Container(
+                                          alignment: Alignment.topLeft,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: Text(
+                                              summaryText,
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontFamily: 'NotoSansJP',
+                                                fontWeight: FontWeight.w500,
+                                                letterSpacing: 1.5,
+                                                color: textColor,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
+                        //戻るボタン
+                       ElevatedButton(
+                          onPressed: (){
+                            Navigator.pop(context);
+                          },
+                         style: ElevatedButton.styleFrom(
+                           primary: Colors.white.withOpacity(0),
+                           shadowColor: Colors.black.withOpacity(0),
+                           shape:StadiumBorder(),
+                         ),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 60,
+                            height: 60,
+                            padding: EdgeInsets.all(10.0),
+                            child: FittedBox(
+                              fit:BoxFit.fitHeight,
+                              child: Icon(
+                                Icons.arrow_back_ios_new_outlined,
+                                size: 50,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          ]
+              ]
+          ),
+        ),
       ),
     );
   }

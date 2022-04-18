@@ -25,7 +25,7 @@ class worksPage extends StatelessWidget {
          '''works from High School.\nver2.x.x Philosophy = "社会問題を伝えるとともに自らも解決に向けて動き出す".\nI have worked mainly with organizations.\n 
          \n#2019to2022''',
          //リンク
-         ' '),
+         'null'),
      //十八
      worksCards('mov_i',
          //サムネ_イメージ
@@ -137,7 +137,7 @@ class worksPage extends StatelessWidget {
          '''Beginning of my project.\nver1.x.x Philosophy = "世界中に感動を届ける".\nPeriods of much stimulation through study abroad.\n 
          \n#2018to2019''',
          //リンク
-         ' '),
+         'null'),
      //tobitate_houkoku
      worksCards('pri_i',
          //サムネ_イメージ
@@ -207,7 +207,7 @@ class worksPage extends StatelessWidget {
          //概要_テキスト
          '''Tokyo, Japan Vlog.\n \n#2020January.\n#canonEOSkissx7 #DavinchResolve''',
          //リンク
-         'https://www.youtube.com/'),
+         'null'),
      //vlog_2
      worksCards('mov_i',
          //サムネ_イメージ
@@ -217,7 +217,7 @@ class worksPage extends StatelessWidget {
          //概要_テキスト
          '''The National Art Center, Tokyo, Japan Vlog.\n \n#2020January.\n#canonEOSkissx7 #DavinchResolve''',
          //リンク
-         'https://www.youtube.com/'),
+         'null'),
      //zoom_1
      worksCards('mov_i',
          //サムネ_イメージ

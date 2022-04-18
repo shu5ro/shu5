@@ -47,7 +47,33 @@ class worksDetaile extends StatelessWidget{
                               Expanded(
                                 flex: 2,
                                 //url
-                                child: ElevatedButton(
+                                child:
+                                //urlがない場合
+                                urlText == 'null'?
+                                Container(
+                                  child: Stack(
+                                    children: [
+                                      //イメージ_
+                                      Container(
+                                        alignment: Alignment.bottomCenter,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(mainImg),
+                                            fit: BoxFit.cover
+                                          )
+                                        ),
+                                      ),
+                                      //カバー_
+                                      Container(
+                                        width: double.infinity,
+                                        color: Colors.black26,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                    :
+                                //urlがある場合
+                                ElevatedButton(
                                   onPressed: (){
                                     _launchInBrowser(urlText);
                                   },
@@ -59,14 +85,14 @@ class worksDetaile extends StatelessWidget{
                                   ),
                                   child: Stack(
                                     children: [
-                                      //_イメージ
+                                      //イメージ_
                                       Container(
                                         alignment: Alignment.bottomCenter,
                                         decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(mainImg),
-                                            fit: BoxFit.cover
-                                          )
+                                            image: DecorationImage(
+                                                image: AssetImage(mainImg),
+                                                fit: BoxFit.cover
+                                            )
                                         ),
                                       ),
                                       //外部ページ_アイコン
@@ -74,12 +100,13 @@ class worksDetaile extends StatelessWidget{
                                         children: [
                                           //アイコン_
                                           Expanded(
+                                            flex: 3,
                                             child:Container(
                                               alignment: Alignment.bottomCenter,
                                               width: double.infinity,
                                               height: double.infinity,
                                               color: Colors.black26,
-                                              child:Icon(
+                                              child: Icon(
                                                 Icons.exit_to_app_outlined,
                                                 size: 56,
                                                 color: Colors.white70,
@@ -89,28 +116,29 @@ class worksDetaile extends StatelessWidget{
 
                                           //テキスト_
                                           Expanded(
+                                            flex: 2,
                                             child: Container(
-                                              alignment: Alignment.topCenter,
-                                              width: double.infinity,
-                                              height: double.infinity,
+                                                alignment: Alignment.topCenter,
+                                                width: double.infinity,
+                                                height: double.infinity,
                                                 color: Colors.black26,
-                                              child:Text(
-                                                'Open external link',
-                                                style: TextStyle(
-                                                  color: Colors.white70,
-                                                ),
-                                              )
-                                          ),
+                                                child: Text(
+                                                  'Open external link',
+                                                  style: TextStyle(
+                                                    color: Colors.white70,
+                                                  ),
+                                                )
+                                            ),
                                           )
                                         ],
                                       )
                                     ],
                                   ),
-                                ),
+                                )
                               ),
                               Expanded(
                                 //タイトル_説明_テキスト
-                                flex: 1,
+                                flex: 3,
                                 child: Container(
                                   alignment: Alignment.topLeft,
                                   margin: EdgeInsets.all(5),
@@ -129,7 +157,7 @@ class worksDetaile extends StatelessWidget{
                                             child: Text(
                                               titleText,
                                               style: TextStyle(
-                                                fontSize: 28,
+                                                fontSize: 32,
                                                 fontFamily: 'NotoSansJP',
                                                 fontWeight: FontWeight.w700,
                                                 letterSpacing: 1.5,
@@ -141,15 +169,16 @@ class worksDetaile extends StatelessWidget{
                                         //説明_テキスト
                                         Container(
                                           alignment: Alignment.topLeft,
+                                          margin: EdgeInsets.only(top: 5.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             child: Text(
                                               summaryText,
                                               style: TextStyle(
-                                                fontSize: 20,
+                                                fontSize: 18,
                                                 fontFamily: 'NotoSansJP',
                                                 fontWeight: FontWeight.w500,
-                                                letterSpacing: 1.5,
+                                                letterSpacing: 1.2,
                                                 color: textColor,
                                               ),
                                             ),

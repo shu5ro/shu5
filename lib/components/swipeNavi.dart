@@ -13,7 +13,7 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
   //スワイプナビ表示
   bool isVisible = true;
   late AnimationController _animationController;
-  late Animation<double> _rotateAnimation;
+  late Animation<Offset> _slideAnimation;
 
   @override
 
@@ -21,15 +21,11 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1200),
     );
-    _rotateAnimation = _animationController
-        .drive(
-        CurveTween(curve: Curves.easeInOut),
-    )
-        .drive(
-      Tween<double>(begin: -1*0.2, end: 0),
-    );
+    _slideAnimation = Tween<Offset>(begin: Offset(0, 0.2), end: Offset(0, -0.8))
+    .chain(CurveTween(curve: Curves.easeInOut))
+    .animate(_animationController);
       _animationController.repeat(reverse: true);
   }
 
@@ -46,6 +42,11 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
       visible: isVisible,
       child: GestureDetector(
         onTap: (){
+          setState((){
+            isVisible = !isVisible;
+          });
+        },
+        onPanDown: (details){
           setState((){
             isVisible = !isVisible;
           });
@@ -74,16 +75,18 @@ class _SwipeNavigationState extends State<SwipeNavigation> with SingleTickerProv
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                  margin: EdgeInsets.only(bottom: 10.0,left: 55.0),
+                  margin: EdgeInsets.only(bottom: 0.0,left: 0.0),
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
-                    child: RotationTransition(
-                      turns: _rotateAnimation,
-                     alignment: Alignment.bottomCenter,
-                      child: Icon(
-                        Icons.swipe_outlined,
-                        size: 96,
-                        color: Colors.white,
+                    child: SlideTransition(
+                      position: _slideAnimation,
+                      child: Container(
+                        alignment: Alignment.bottomCenter,
+                        child: Icon(
+                          Icons.swipe_up_outlined,
+                          size: 96,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

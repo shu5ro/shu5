@@ -189,9 +189,6 @@ class _WelcomePageState extends State<WelcomePage> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     margin: EdgeInsets.symmetric(vertical: 0,horizontal: 10),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                    ),
                                     child: FittedBox(
                                       fit: BoxFit.fitHeight,
                                       child: SizedBox(
@@ -228,9 +225,6 @@ class _WelcomePageState extends State<WelcomePage> {
                                 child: Container(
                                   alignment: Alignment.center,
                                   margin: EdgeInsets.symmetric(vertical: 0,horizontal: 10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                  ),
                                   child: FittedBox(
                                     fit: BoxFit.fitHeight,
                                     child: SizedBox(
@@ -267,9 +261,6 @@ class _WelcomePageState extends State<WelcomePage> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     margin: EdgeInsets.symmetric(vertical: 0,horizontal: 10),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                    ),
                                     child: SizedBox(
                                       width: 60,
                                       height: 60,

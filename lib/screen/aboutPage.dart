@@ -114,7 +114,11 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                   body: Container(
                     color: backColor,
                     alignment: Alignment.center,
-                    child: Container(
+                    child: GestureDetector(
+                     onPanDown:((details) {
+                       _animationChange;
+                     }),
+                      child: Container(
                       alignment: Alignment.center,
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height,
@@ -146,11 +150,11 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                             width: MediaQuery.of(context).size.width,
                                             height: MediaQuery.of(context).size.height,
                                             decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: AssetImage('assets/images/about_img_3.png'),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                                borderRadius: BorderRadius.circular(0.0),
+                                              image: DecorationImage(
+                                                image: AssetImage('assets/images/about_img_3.png'),
+                                                fit: BoxFit.cover,
+                                              ),
+                                              borderRadius: BorderRadius.circular(0.0),
                                             ),
                                           ),
                                           //名前_テキスト
@@ -242,53 +246,53 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                               width: MediaQuery.of(context).size.width,
                                               height: MediaQuery.of(context).size.height*0.8,
                                               decoration: BoxDecoration(
-                                                color: backColor,
-                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0), bottomLeft: Radius.circular(0.0), bottomRight: Radius.circular(0.0)),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color:  Colors.black26,
-                                                    spreadRadius: 1.0,
-                                                    blurRadius: 10.0,
-                                                    offset: Offset(0, -2.5),
-                                                  )
-                                                ]
+                                                  color: backColor,
+                                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0), bottomLeft: Radius.circular(0.0), bottomRight: Radius.circular(0.0)),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color:  Colors.black26,
+                                                      spreadRadius: 1.0,
+                                                      blurRadius: 10.0,
+                                                      offset: Offset(0, -2.5),
+                                                    )
+                                                  ]
                                               ),
                                               child: Container(
-                                                child: Column(
-                                                  children: <Widget>[
+                                                  child: Column(
+                                                    children: <Widget>[
                                                       //
-                                                       Container(
-                                                          alignment: Alignment.center,
-                                                          //color: Colors.red,
-                                                          height: MediaQuery.of(context).size.height*0.1,
-                                                          child: Column(
-                                                            children: <Widget>[
-                                                              //表示非表示_ボタン
-                                                              Expanded(
-                                                                flex: 3,
-                                                                  child:  SizedBox(
-                                                                    width: double.infinity,
-                                                                    child: ElevatedButton(
-                                                                      onPressed: _animationChange,
-                                                                      style: ElevatedButton.styleFrom(
-                                                                        primary: Colors.white.withOpacity(0),
-                                                                        shadowColor: Colors.white.withOpacity(0),
-                                                                      ),
-                                                                      child: FittedBox(
-                                                                        fit: BoxFit.fitHeight,
-                                                                        child: Icon(
-                                                                          Icons.keyboard_arrow_up_outlined,
-                                                                          size: 64,
-                                                                          color: Colors.black,
-                                                                        ),
-                                                                      )
+                                                      Container(
+                                                        alignment: Alignment.center,
+                                                        //color: Colors.red,
+                                                        height: MediaQuery.of(context).size.height*0.1,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            //表示非表示_ボタン
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child:  SizedBox(
+                                                                width: double.infinity,
+                                                                child: ElevatedButton(
+                                                                    onPressed: _animationChange,
+                                                                    style: ElevatedButton.styleFrom(
+                                                                      primary: Colors.white.withOpacity(0),
+                                                                      shadowColor: Colors.white.withOpacity(0),
                                                                     ),
-                                                                  ),
+                                                                    child: FittedBox(
+                                                                      fit: BoxFit.fitHeight,
+                                                                      child: Icon(
+                                                                        Icons.keyboard_arrow_up_outlined,
+                                                                        size: 64,
+                                                                        color: Colors.black,
+                                                                      ),
+                                                                    )
+                                                                ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                       ),
-                                                    Expanded(
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Expanded(
                                                         child: SingleChildScrollView(
                                                           child: Container(
                                                             alignment: Alignment.bottomCenter,
@@ -442,9 +446,9 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                             ),
                                                           ),
                                                         ),
-                                              )
-                                                  ],
-                                                )
+                                                      )
+                                                    ],
+                                                  )
                                               )
                                           ),
                                         )  ),
@@ -455,7 +459,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                           ),
                         ],
                       ),
-                    ),
+                    ),)
                   ),
                 ),
               ),

@@ -263,7 +263,6 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                       //
                                                       Container(
                                                         alignment: Alignment.center,
-                                                        //color: Colors.red,
                                                         height: MediaQuery.of(context).size.height*0.1,
                                                         child: Column(
                                                           children: <Widget>[

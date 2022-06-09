@@ -17,7 +17,7 @@ class _bioCardState extends State<bioCard> {
   String engText =
       '''03s, studying economics at a Japanese university. 5th term of the Tobitate High School Student Course, Future Technology Talent Program. I am created videos, apps, and games with the aim of creating “A society where everyone can feel the ‘FUN' of life. Majored in economics at university in order to clarify the society (purpose) I should aim for. My best tool is PowerPoint. Recently, I have been diving into the K-pop swamp. Help.''';
   String jpText =
-      '''日本の大学で経済学を学ぶ03s。トビタテ高校5期未来テクノロジー人材枠。 “誰もが生きる『おもしろさ』を感じることができる社会”を目指し、映像・アプリ・Webサービス・ゲームなどを制作。目指すべき社会(目的)を明確にするため、大学では経済学を専攻。エンターテイメント×社会問題解決でソリューションを模索中(ざっくり表現すると)。一番得意なツールはパワポ。最近、K-popの沼にダイブしてしまった。助けて。''';
+      '''日本の大学で経済学を学ぶ03s。トビタテ高校5期未来テクノロジー人材枠。 “誰もが生きる『おもしろさ』を感じることができる社会”を目指し、映像・アプリ・ゲームなどを制作。目指すべき社会(目的)を明確にするため、大学では経済学を専攻。エンターテイメント×社会問題解決でソリューションを模索中(ざっくり表現すると)。一番得意なツールはパワポ。最近、K-popの沼にダイブしてしまった。助けて。''';
   String koreText =
       '''일본 대학에서 경제학을 배우는 03s. 토비타테 고등학교 5기 미래 테크놀로지 인재 프레임. “모두가 사는 “재미”를 느낄 수 있는 사회”를 목표로, 영상·어플리·게임 등을 제작. 목표로 하는 사회(목적)를 명확히 하기 위해 대학에서는 경제학을 전공. 제일 특기인 툴은 파와포. 최근 K-pop의 늪에 다이빙했다. 도와주세요.''';
 

@@ -57,8 +57,9 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
     var favList = [
       //favoriteCards(favIcon, titleText, subText)
       favoriteCards('M','''Love Shhh!''','JO YURI'),
-      favoriteCards('M','''magic!''','Little Glee Monster'),
       favoriteCards('M','''WE GO''','fromis_9'),
+      favoriteCards('M','''magic!''','Little Glee Monster'),
+      favoriteCards('M','''夏になって歌え''','Little Glee Monster'),
       favoriteCards('M','''Dont Lose Sight''','Lawrence'),
       favoriteCards('N','''スタートアップ: 夢の扉''','NETFLIX'),
       favoriteCards('N','''지금 우리 학교는''','NETFLIX'),
@@ -292,7 +293,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                             alignment: Alignment.bottomCenter,
                                                             width: MediaQuery.of(context).size.width,
                                                             height: MediaQuery.of(context).size.height,
-                                                            padding: EdgeInsets.only(top: 0.0),
+                                                            margin: EdgeInsets.only(top: 15.0),
                                                             child: Column(
                                                               mainAxisAlignment: MainAxisAlignment.end,
                                                               children: <Widget>[

@@ -87,7 +87,7 @@ class worksCards extends StatelessWidget {
                               fit: BoxFit.fitWidth,
                               child: Container(
                                 alignment: Alignment.centerRight,
-                                margin: EdgeInsets.only(left: 0,top: 0,right: 5,bottom: 5),
+                                margin: EdgeInsets.only(left: 0,top: 0,right: 5,bottom: 0),
                                 padding: EdgeInsets.all(2.5),
                                 child: //動画の場合
                                 firstIcon == 'mov_i'
@@ -162,9 +162,10 @@ class worksCards extends StatelessWidget {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 24,
                                   fontFamily: 'NotoSansJP',
                                   fontWeight: FontWeight.w700,
+                                  letterSpacing: 1.2,
                                   color: Colors.white,
                                 ),
                               ),

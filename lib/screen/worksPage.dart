@@ -15,14 +15,14 @@ class worksPage extends StatelessWidget {
     //works_コンテンツ_リスト
    var imageList = [
      //worksCards(firstIcon, frontImg, title, summary, url),
-     //ver2.x.x
-     worksCards(' ',
+     //my_web_site
+     worksCards('web_i',
          //サムネ_イメージ
          'assets/images/works_img/site_.png',
          //タイトル
-         '''myWebSite(This Site)''',
+         '''My Web Site(This Site)''',
          //概要_テキスト
-         '''my original WebSite.\nI made this using Flutter. Coded in Dart language.\n \n#Flutter #Dart''',
+         '''My original WebSite『Shu5.site』.\nI made this using Flutter. Coded in Dart language.\n \n#Flutter #Dart''',
          //リンク
          'https://shu5-site.web.app/#/'),
      //ver2.x.x

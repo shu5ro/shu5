@@ -19,9 +19,6 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
 
   var textColor = Color(0xFF8A8A8A);
 
-  //紹介動画_リンク
-  final String sourceLink = 'assets/html/view.html';
-
   //表示_切り替え_
   bool visibleChange = true;
 
@@ -59,18 +56,22 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
     //favorite_コンテンツ_リスト
     var favList = [
       //favoriteCards(favIcon, titleText, subText)
-      favoriteCards('M','''O.O''','NMIXX'),
+      favoriteCards('M','''Love Shhh!''','JO YURI'),
+      favoriteCards('M','''magic!''','Little Glee Monster'),
+      favoriteCards('M','''WE GO''','fromis_9'),
+      favoriteCards('M','''Dont Lose Sight''','Lawrence'),
+      favoriteCards('N','''スタートアップ: 夢の扉''','NETFLIX'),
       favoriteCards('N','''지금 우리 학교는''','NETFLIX'),
       favoriteCards('G','''e-football''','Steam'),
     ];
     //skill_コンテンツ_リスト
     var slillList = [
       //skillsCards(skillIcon, skillText, skillSubText)
+      skillsCards('D', '''PowerPoint''', '5'),
       skillsCards('M', '''AdobeAe''', '3'),
       skillsCards('M', '''AdobePr''', '3'),
       skillsCards('M', '''DavinciResolve''', '2'),
       skillsCards('C', '''Photography''', '3'),
-      skillsCards('D', '''PowerPoint''', '5'),
       skillsCards('G', '''Unity''', '2'),
       skillsCards('G', '''UE4''', '1'),
       skillsCards('A', '''Dart/Flutter''', '2'),
@@ -180,16 +181,15 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                       child: FittedBox(
                                                           fit:BoxFit.fitHeight,
                                                           child: Text(
-                                                            'shugo\nです。'
-                                                            // "I'm\nshugo."
+                                                            '''"Hello, \n Shugo!"'''
                                                             ,
                                                             style: TextStyle(
-                                                              color: Colors.white60,
+                                                              color: Colors.white70,
                                                               fontFamily: 'NotoSansJP',
                                                               fontSize: 640,
-                                                              fontWeight: FontWeight.w700,
-                                                              letterSpacing: 5.0,
-                                                              height: 1.2,
+                                                              fontWeight: FontWeight.w800,
+                                                              letterSpacing: 8.0,
+                                                              height: 1.5,
                                                             ),
                                                           )),
                                                     ),
@@ -215,28 +215,8 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                         ],
                                       ),
                                     ),
-                                    //tap_イメージ
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: MediaQuery.of(context).size.width,
-                                      height: MediaQuery.of(context).size.height,
-                                      child: Container(
-                                        //color: Colors.red,
-                                        alignment: Alignment.center,
-                                        margin: EdgeInsets.all(0.0),
-                                        padding: EdgeInsets.only(left: 150, top: 325, right: 0, bottom: 0),
-                                        child: Opacity(
-                                          opacity: 0.5,
-                                          child: Image.asset(
-                                            'assets/images/tap_img.png',
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                     //コンテンツ_
-                                    SlideTransition(
-                                        position: _slideAnimation,
-                                        child:  Container(
+                                    Container(
                                           alignment: Alignment.bottomCenter,
                                           width: MediaQuery.of(context).size.width,
                                           height: MediaQuery.of(context).size.height,
@@ -244,7 +224,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                           child: Container(
                                               alignment: Alignment.center,
                                               width: MediaQuery.of(context).size.width,
-                                              height: MediaQuery.of(context).size.height*0.8,
+                                              height: MediaQuery.of(context).size.height*0.5,
                                               decoration: BoxDecoration(
                                                   color: backColor,
                                                   borderRadius: BorderRadius.only(topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0), bottomLeft: Radius.circular(0.0), bottomRight: Radius.circular(0.0)),
@@ -260,36 +240,51 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                               child: Container(
                                                   child: Column(
                                                     children: <Widget>[
-                                                      //
                                                       Container(
                                                         alignment: Alignment.center,
-                                                        height: MediaQuery.of(context).size.height*0.1,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            //表示非表示_ボタン
-                                                            Expanded(
-                                                              flex: 3,
-                                                              child:  SizedBox(
-                                                                width: double.infinity,
-                                                                child: ElevatedButton(
-                                                                    onPressed: _animationChange,
-                                                                    style: ElevatedButton.styleFrom(
-                                                                      primary: Colors.white.withOpacity(0),
-                                                                      shadowColor: Colors.white.withOpacity(0),
-                                                                    ),
-                                                                    child: FittedBox(
-                                                                      fit: BoxFit.fitHeight,
-                                                                      child: Icon(
-                                                                        Icons.keyboard_arrow_up_outlined,
-                                                                        size: 64,
-                                                                        color: Colors.black,
-                                                                      ),
-                                                                    )
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
+                                                        height: MediaQuery.of(context).size.height*0.08,
+                                                        decoration: BoxDecoration(
+                                                          border: Border(bottom: BorderSide(color: Colors.black45, width: 2.0)),
                                                         ),
+                                                        //表示非表示_ボタン_3つ
+                                                        child: Row(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children:  <Widget>[
+                                                            Container(
+                                                                padding: EdgeInsets.all(15.0),
+                                                                child: FittedBox(
+                                                                  fit: BoxFit.fitHeight,
+                                                                  child: Icon(
+                                                                    Icons.sports_esports,
+                                                                    size: 64,
+                                                                    color: Colors.black,
+                                                                  ),
+                                                                )
+                                                            ),
+                                                            Container(
+                                                                padding: EdgeInsets.all(15.0),
+                                                                child: FittedBox(
+                                                                  fit: BoxFit.fitHeight,
+                                                                  child: Icon(
+                                                                    Icons.code,
+                                                                    size: 64,
+                                                                    color: Colors.black,
+                                                                  ),
+                                                                )
+                                                            ),
+                                                            Container(
+                                                                padding: EdgeInsets.all(15.0),
+                                                                child: FittedBox(
+                                                                  fit: BoxFit.fitHeight,
+                                                                  child: Icon(
+                                                                    Icons.public,
+                                                                    size: 64,
+                                                                    color: Colors.black,
+                                                                  ),
+                                                                )
+                                                            ),
+                                                          ]
+                                                        )
                                                       ),
                                                       Expanded(
                                                         child: SingleChildScrollView(
@@ -329,9 +324,9 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                                                         Text(
                                                                                           'My Favorite',
                                                                                           style: TextStyle(
-                                                                                            color: Colors.deepPurpleAccent.withOpacity(0.8),
+                                                                                            color: Colors.black,
                                                                                             fontFamily: 'NotoSansJP',
-                                                                                            fontSize: 32,
+                                                                                            fontSize: 36,
                                                                                             letterSpacing: 1.5,
                                                                                             fontWeight: FontWeight.w700,
                                                                                           ),
@@ -341,7 +336,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                                                         Text(
                                                                                           'My Favorite',
                                                                                           style: TextStyle(
-                                                                                            color: Colors.deepPurpleAccent.withOpacity(0.3),
+                                                                                            color: Colors.black38,
                                                                                             fontFamily: 'NotoSansJP',
                                                                                             fontSize: 24,
                                                                                             letterSpacing: 1.5,
@@ -368,9 +363,9 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                                                         Text(
                                                                                           'My Skill',
                                                                                           style: TextStyle(
-                                                                                            color: Colors.deepPurpleAccent.withOpacity(0.8),
+                                                                                            color: Colors.black,
                                                                                             fontFamily: 'NotoSansJP',
-                                                                                            fontSize: 32,
+                                                                                            fontSize: 36,
                                                                                             letterSpacing: 1.5,
                                                                                             fontWeight: FontWeight.w700,
                                                                                           ),
@@ -380,7 +375,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                                                         Text(
                                                                                           'My Skill',
                                                                                           style: TextStyle(
-                                                                                            color: Colors.deepPurple.withOpacity(0.3),
+                                                                                            color: Colors.black38,
                                                                                             fontFamily: 'NotoSansJP',
                                                                                             fontSize: 22,
                                                                                             letterSpacing: 1.5,
@@ -450,7 +445,7 @@ class _aboutPageState extends State<aboutPage> with SingleTickerProviderStateMix
                                                   )
                                               )
                                           ),
-                                        )  ),
+                                        )
                                   ],
                                 ),
                               ),

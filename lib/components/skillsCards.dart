@@ -29,7 +29,7 @@ class skillsCards extends StatelessWidget{
         height: 50,
         margin: EdgeInsets.only(left: 5.0, top: 10.0, right: 5.0, bottom: 10.0),
         decoration: BoxDecoration(
-          color: Colors.deepPurpleAccent,
+          color: Colors.black,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
@@ -51,7 +51,7 @@ class skillsCards extends StatelessWidget{
                   width: 45,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.black,
                     //円にするやつ
                     shape: BoxShape.circle,
                   ),

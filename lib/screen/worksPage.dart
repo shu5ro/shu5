@@ -18,6 +18,16 @@ class worksPage extends StatelessWidget {
      //ver2.x.x
      worksCards(' ',
          //サムネ_イメージ
+         'assets/images/works_img/site_.png',
+         //タイトル
+         '''myWebSite(This Site)''',
+         //概要_テキスト
+         '''my original WebSite.\nI made this using Flutter. Coded in Dart language.\n \n#Flutter #Dart''',
+         //リンク
+         'https://shu5-site.web.app/#/'),
+     //ver2.x.x
+     worksCards(' ',
+         //サムネ_イメージ
          'assets/images/works_img/v2.x.x_.png',
          //タイトル
          '''ver2.x.x''',

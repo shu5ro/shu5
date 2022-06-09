@@ -82,7 +82,8 @@ class AboutPage extends StatelessWidget{
                   PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) {
                         return moviePlayPage('intro-mov',
-                            'https://www.youtube-nocookie.com/embed/Na0uhOOLwAg',
+                            //'https://www.youtube-nocookie.com/embed/Na0uhOOLwAg',
+                          'assets/html/view.html'
                         );
                       },
                       transitionDuration: Duration(milliseconds: 700),

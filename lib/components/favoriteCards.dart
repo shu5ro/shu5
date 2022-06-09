@@ -23,7 +23,7 @@ class favoriteCards extends StatelessWidget{
         height: 50,
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
         decoration: BoxDecoration(
-          color: Colors.deepPurpleAccent,
+          color: Colors.black,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
@@ -45,7 +45,7 @@ class favoriteCards extends StatelessWidget{
                   width: 45,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.black,
                     //円にするやつ
                     shape: BoxShape.circle,
                     //border: Border.all(color: Colors.white, width: 2,),

@@ -22,9 +22,9 @@ class worksPage extends StatelessWidget {
          //タイトル
          '''My Web Site(This Site)''',
          //概要_テキスト
-         '''My original WebSite『Shu5.site』.\nI made this using Flutter. Coded in Dart language.\n \n#Flutter #Dart''',
+         '''My original WebSite『Shu5.site』.\nI coded in Flutter/Dart language.\n \n#2022April.\n#Flutter #Dart''',
          //リンク
-         'https://shu5-site.web.app/#/'),
+         'null'),
      //ver2.x.x
      worksCards(' ',
          //サムネ_イメージ
@@ -36,16 +36,6 @@ class worksPage extends StatelessWidget {
          \n#2019to2022''',
          //リンク
          'null'),
-     //十八
-     worksCards('mov_i',
-         //サムネ_イメージ
-         'assets/images/works_img/eighteen_.png',
-         //タイトル
-         '''『十八』''',
-         //概要_テキスト
-         '''Photography Club Theme Shooting Behind.\n \n#2021May.\n#canonEOS kissx7 #AdobeAe #AdobePr #AdobeLr\n \n#iloveyouguys''',
-         //リンク
-         'https://youtube.com/shorts/ciUfsPMqDXQ?feature=share'),
      //flare_
      worksCards('proj_i',
          //サムネ_イメージ
@@ -56,6 +46,16 @@ class worksPage extends StatelessWidget {
          '''I first team leader of the new project at the General Incorporated Association SustainableGame.\n \nIn addition to logo/UI design and video production, I organized the team and contributed to winning a student category award in a certain business contest.\n \n#2020.\n''',
          //リンク
          'https://www.sustainablegame.com/?p=1101'),
+     //十八
+     worksCards('mov_i',
+         //サムネ_イメージ
+         'assets/images/works_img/eighteen_.png',
+         //タイトル
+         '''『十八』''',
+         //概要_テキスト
+         '''Photography Club Theme Shooting Behind.\n \n#2021May.\n#canonEOS kissx7 #AdobeAe #AdobePr #AdobeLr\n \n#iloveyouguys''',
+         //リンク
+         'https://youtube.com/shorts/ciUfsPMqDXQ?feature=share'),
      //sg_1
      worksCards('mov_i',
          //サムネ_イメージ

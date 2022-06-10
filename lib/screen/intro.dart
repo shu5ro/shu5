@@ -181,38 +181,38 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            //YT_リンクボタン
+                            //動画_リンクボタン
                             Expanded(
                               flex: 1,
                               child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.symmetric(vertical: 0,horizontal: 10),
-                                    child: FittedBox(
-                                      fit: BoxFit.fitHeight,
-                                      child: SizedBox(
-                                        width: 60,
-                                        height: 60,
-                                        child: ElevatedButton(
-                                          onPressed:(){
-                                            urlText = 'https://www.youtube.com/';
-                                            _launchInBrowser(urlText);
-                                          },
-                                          style: ElevatedButton.styleFrom(
+                                fit: BoxFit.fitWidth,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.symmetric(vertical: 0,horizontal: 10),
+                                  child: FittedBox(
+                                    fit: BoxFit.fitHeight,
+                                    child: SizedBox(
+                                      width: 60,
+                                      height: 60,
+                                      child: ElevatedButton(
+                                        onPressed:(){
+                                          urlText = 'https://www.instagram.com/reel/CckqRkFgECD/?utm_source=ig_web_copy_link';
+                                          _launchInBrowser(urlText);
+                                        },
+                                        style: ElevatedButton.styleFrom(
                                             primary: Colors.white,
                                             shape:StadiumBorder(),
                                             side: BorderSide(color: Colors.black, width: 2,)
-                                          ),
-                                          child: Text(
-                                            'YT',
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                        ),
+                                        child: Text(
+                                          'Vi',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),
+                                    ),
                                   ),
                                 ),
                               ),
